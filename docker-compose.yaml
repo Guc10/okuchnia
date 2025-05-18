@@ -1,0 +1,7 @@
+services:
+  okuchnia:
+    build: .
+    container_name: okuchnia.eu
+    restart: always
+    ports:
+      - "3001:3001"
