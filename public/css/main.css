@@ -10,11 +10,12 @@ body {
   background-color: #e7dfd8;
   height: 100vh;
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 80px 1fr auto;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
   color: #231f20;
+  font-weight: 250;
 }
 body p {
   font-size: 20px;
@@ -30,6 +31,7 @@ body header {
 }
 
 .container {
+  z-index: 2;
   width: 94%;
   height: auto;
   display: flex;
@@ -65,7 +67,7 @@ body header {
   height: auto;
   padding-left: 120px;
   transform: translatey(-100%);
-  transition: opacity 1.3s ease, transform 0.7s ease;
+  transition: transform 0.7s ease;
   pointer-events: none;
 }
 .container nav ul {
@@ -82,10 +84,11 @@ body header {
 .container nav li a {
   text-decoration: none;
   color: #231f20;
+  transition: all 0.3s ease-in-out;
 }
 .container nav li a:hover {
-  color: #000000;
-  transition: all 0.3s ease-in-out;
+  color: black;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 1px 0 #fff;
 }
 
 .container.show-nav nav {
@@ -93,10 +96,15 @@ body header {
   pointer-events: auto;
 }
 
+main {
+  user-select: none;
+  z-index: 1;
+}
 main .main-container {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 15px 0 15px 0;
 }
 main p {
   font-size: 3.5em;
@@ -104,21 +112,56 @@ main p {
   line-height: 1.2em;
   letter-spacing: 0.15em;
   font-weight: 150;
+  margin: 0;
 }
 main h1 {
   color: white;
   font-size: 20em;
-  line-height: 1em;
   text-align: left;
+  line-height: 0.8em;
   letter-spacing: 0.2em;
-  margin: 0;
-  margin-left: -80px;
+  margin: 0 0 0 -80px;
+  text-shadow: 2px 4px 16px rgba(0, 0, 0, 0.5), 0 1px 0 #fff;
 }
 
-.footer-container {
+footer {
+  position: fixed;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 320px;
+  bottom: -240px;
+  z-index: 3;
+  color: #231f20;
+  transition: color 0.5s ease-in-out;
+  background-color: rgba(35, 31, 32, 0);
+}
+footer a {
+  text-decoration: none;
+}
+footer p {
+  font-size: 20px;
+}
+footer img {
+  width: 45px;
+  height: 45px;
+  margin: 17.5px 25px 17.5px 25px;
+  transition: transform 0.3s ease-in-out;
+}
+footer img:hover {
+  transform: scale(1.07);
+}
+footer .footer-top {
+  height: 80px;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  background-color: #231f20;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-bottom {
+  height: 240px;
+  width: 100%;
+  padding: 15px 25px 15px 25px;
+  box-sizing: border-box;
+  text-align: left;
 }
