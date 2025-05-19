@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "sass scss:public/css --no-source-map && node index.js",
     "scss": "sass scss:public/css --no-source-map --watch"
   },
   "repository": {
