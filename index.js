@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'okuchnia main page' });
 });
 
-app.listen(port, () => console.log('server is up on port ${port}'));
+app.listen(port, () => console.log(`server is up on port ${port}`));

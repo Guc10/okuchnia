@@ -1,3 +1,25 @@
-p{
-  color: blue;
+@use 'variables' as *;
+
+body{
+  width: 100vw;
+  background-color: $mainColor;
+
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  font-family: "Roboto", sans-serif;
+  color: $fontColor;
+
+  p{
+    font-size:$fontSize;
+  }
 }
+
+header{
+  width: 100%;
+  height: 10vh;
+}
+
