@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const menu = document.querySelector('.menu');
     const nav = document.querySelector('nav');
 
+    function bumpNav(){
+        menu.style.animation = 'none';
+        void menu.offsetWidth;
+        menu.style.animation = 'bump 0.4s ease-out';
+    }
+
     function showNav() {
         container.classList.add('show-nav');
     }
@@ -22,4 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     menu.addEventListener('mouseleave', handleMouseLeave);
     nav.addEventListener('mouseleave', handleMouseLeave);
+
+    menu.addEventListener('click', bumpNav);
 });

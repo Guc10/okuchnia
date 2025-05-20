@@ -8,5 +8,23 @@
 }
 
 $mainColor: #e7dfd8;
+$secondaryColor: #DAE6E8;
+$thirdColor: #4D8793;
 $fontColor: #231f20;
 $fontSize: 20px;
+
+@keyframes bump {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes scrollBump {
+  //when the page is over-scrolled
+}
